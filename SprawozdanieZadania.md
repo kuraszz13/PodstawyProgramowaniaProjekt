@@ -1,15 +1,15 @@
 
-# Sprawozdanie – Zadania 4–7 (MSYS2 / bash / narzędzia Unixowe)
+Sprawozdanie – Zadania 4–7 (MSYS2)
 
-## Wprowadzenie
+Wprowadzenie
 
 Celem zestawu zadań było zastosowanie narzędzi systemu MSYS2 (środowisko bash i zestaw narzędzi Unixowych) do przetwarzania danych tekstowych i graficznych. Wykorzystano m.in. `cat`, `grep`, `awk`, `sed`, `diff`, `patch`, `md5sum`, `magick`, `tr`, `dos2unix`, `unix2dos`.
 
 ---
 
-## Zadanie 4 – Porównanie plików (diff + patch)
+Zadanie 4 – Porównanie plików (diff + patch)
 
-### Cel
+Cel
 
 - Porównać dwa pliki tekstowe `old.txt` i `new.txt`.
 - Wygenerować różnice jako plik `.patch`.
