@@ -1,5 +1,5 @@
 
-# Sprawozdanie – Zadania 4–7 (MSYS2)
+# Sprawozdanie – Zadania 3–7 (MSYS2)
 
 ## Wprowadzenie
 
@@ -7,19 +7,37 @@ Celem zestawu zadań było zastosowanie narzędzi systemu MSYS2 (środowisko bas
 
 ---
 
-## Zadanie 4 – Porównanie plików (diff + patch)
+## Zadanie 3 - Niesforne dane (cat + paste + echo)
 
 ### Cel
 
-- Porównać dwa pliki tekstowe `old.txt` i `new.txt`.
+- Podzielić plik na trzy kolumny, tak aby był gotowy do importu do pliku programu Excel
+- Dodać nagłowki ("X","Y","Z")
+
+### Wykonanie
+```cat dane.txt
+paste - - - < dane.txt
+echo "x y z" >> dane.txt
+```
+### Uwagi 
+
+- `cat` wyświetla podany plik dane.txt
+- `paste` dzieli tekst na trzy kolumny
+- `echo 'x y z"` dodaje nagłowki do kolumn
+
+## Zadanie 4 – Dodawanie poprawek (diff + patch)
+
+### Cel
+
+- Porównać dwa pliki tekstowe `lista.txt` i `lista-pop.txt`.
 - Wygenerować różnice jako plik `.patch`.
-- Zaaplikować zmiany na pliku `old.txt`, aby uzyskać `new.txt`.
+- Zaaplikować zmiany na pliku `lista.txt`, aby uzyskać `lista-pop.txt`.
 
 ### Wykonanie
 
 ```bash
-diff -u old.txt new.txt > zmiany.patch
-patch old.txt zmiany.patch
+diff -u lista.txt lista-pop.txt > lista.patch
+patch lista.txt lista.patch
 ```
 
 ### Uwagi
@@ -28,7 +46,7 @@ patch old.txt zmiany.patch
 - Jeśli pliki są puste, może to oznaczać błędne kodowanie – można użyć `dos2unix`:
 
 ```bash
-dos2unix old.txt new.txt
+dos2unix lista.txt lista-pop.txt
 ```
 
 ---
