@@ -52,7 +52,7 @@ dos2unix lista.txt lista-pop.txt
 
 ---
 
-## Zadanie 5 – Wyciąganie linii z pliku CSV
+## Zadanie 5 – Z CSV do SQL i z powrotem
 
 ### Cel
 
@@ -73,7 +73,7 @@ awk -F ';' '{ print $2 }' dane.csv | sort | uniq
 
 ---
 
-## Zadanie 6 – Sprawdzanie sum kontrolnych (md5sum)
+## Zadanie 6 – Marudny tłumacz (md5sum)
 
 ### Cel
 
