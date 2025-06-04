@@ -15,7 +15,8 @@ Celem zestawu zadań było zastosowanie narzędzi systemu MSYS2 (środowisko bas
 - Dodać nagłowki ("X","Y","Z")
 
 ### Wykonanie
-```cat dane.txt
+```bash
+cat dane.txt
 paste - - - < dane.txt
 echo "x y z" >> dane.txt
 ```
