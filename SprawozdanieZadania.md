@@ -1,5 +1,5 @@
 
-# Sprawozdanie – Zadania 3–7 (MSYS2)
+# Sprawozdanie – Zadania 3–10 (MSYS2)
 
 ## Wprowadzenie
 
