@@ -92,6 +92,32 @@ cat steps-2sql.csv
 
 ### Wykonanie
 
+### Całość kodu wykonanego zadania:
+
+```bash
+  md5sum lista.txt
+  md5sum lista-pop.txt
+  diff lista.txt lista-pop.txt
+  cat lista.patch
+  unzip tlumacz.zip
+  cat en-7.2.json5
+  cat en-7.4.json5
+  cat en-7.2.json5 | awk '{print "// " $0; print $0}' > pl-7.2.json5
+  cat en-7.2.json5
+  cat pl-7.2.json5
+  grep ':'en-7.2.json5 > old.txt
+  grep ':'en-7.4.json5 > new.txt
+  dos2unix en-7.2.json5
+  dos2unix en-7.4.json5
+  grep ':'en-7.2.json5 > old.txt
+  grep ':'en-7.2.json5 > old.txt
+  grep -E '^\s*".*":' en-7.2.json5 > old.txt
+  grep -E '^\s*".*":' en-7.4.json5 > new.txt
+  grep -Fvx -f old.txt new.txt > only_new.txt
+  awk '{print "// " $0; print $0}' only_new.txt > pl-7.4.json5
+  cat pl-7.4.json5
+```
+
 #### 1. Obliczenie sum kontrolnych:
 
 ```bash
