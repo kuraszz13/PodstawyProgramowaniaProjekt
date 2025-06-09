@@ -63,7 +63,12 @@ dos2unix lista.txt lista-pop.txt
 
 ```bash
 awk -F ';' '{ print $2 }' dane.csv | sort | uniq
+dos2unix steps-2sql.csv
+tail -n +2 steps-2sql.csv | awk -F';' '{print "INSERT INTo stepsData (time, intensity, steps) VALUES (" $1 ", " $2 ", " $3 ");"}' > stepsData.sql
+cat steps-2sql
+cat steps-2sql.csv
 ```
+
 
 ### Objaśnienie
 
