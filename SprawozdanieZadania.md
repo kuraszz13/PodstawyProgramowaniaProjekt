@@ -59,7 +59,7 @@ dos2unix lista.txt lista-pop.txt
 - Wyświetlić unikalne nazwiska z pliku `dane.csv`.
 - Posortować je alfabetycznie.
 
-### Rozwiązanie z użyciem `awk`, `sort`, `uniq`
+### Rozwiązanie z użyciem `awk`, `sort`, `uniq`, `tail`
 
 ```bash
 awk -F ';' '{ print $2 }' dane.csv | sort | uniq
