@@ -58,6 +58,10 @@ dos2unix lista.txt lista-pop.txt
 
 - Wyświetlić unikalne nazwiska z pliku `dane.csv`.
 - Posortować je alfabetycznie.
+- Przygotować dane do importu do bazy danych SQL w poniższej postaci.
+  INSERT INTO stepsData (time, intensity, steps) VALUES (1562001120, 19, 0);
+  INSERT INTO stepsData (time, intensity, steps) VALUES (1562001180, 23, 0);
+- Opracować w jaki sposób zamienić plik SQL na plik typu CSV
 
 ### Rozwiązanie z użyciem `awk`, `sort`, `uniq`, `tail`
 
@@ -83,6 +87,7 @@ cat steps-2sql.csv
 ### Cel
 
 - Sprawdzić, czy pliki `plik1.txt`, `plik2.txt`, itd. nie zostały zmodyfikowane.
+- Dodać komentarz
 - Porównać ich sumy MD5 z oryginalnymi.
 
 ### Wykonanie
