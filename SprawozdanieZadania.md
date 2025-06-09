@@ -182,3 +182,28 @@ zip -j gotowe-fotki.zip output/*
   - Rozwiązanie: poprawne użycie `if [ -f "$file" ]; then`.
 
 ---
+
+
+## Zadanie 8 – Wszędzie te PDF-y
+
+### Cel
+
+- Pliki które w zadaniu 7 modyfikowaliśmy, trzeba z nich stworzyć PDF
+- PDF ma mieć 8 zdjęć na stronie (po 2 w 4 kolumnach)
+- Dodatkowo dodać nazwy plików do dokumentu PDF
+
+### Wykorzystane narzędzia
+
+- 
+
+### Skrypt:
+
+```bash
+
+```
+
+### Napotkane problemy
+
+- 
+
+---
