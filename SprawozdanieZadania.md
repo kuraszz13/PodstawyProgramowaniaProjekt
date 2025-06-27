@@ -161,17 +161,16 @@ mkdir all
 cp kopie1/* all/
 cp kopie2/* all/
 
-mkdir -p output
+mkdir -p kopie
 
 for file in all/*; do
   if [ -f "$file" ]; then
     name=$(basename "$file")
     name_noext="${name%.*}"
-    magick "$file" -resize x720 -density 96x96 "output/${name_noext}.jpg"
+    magick "$file" -resize x720 -density 96x96 "kopie/${name_noext}.jpg"
   fi
 done
 
-zip -j gotowe-fotki.zip output/*
 ```
 
 ### Napotkane problemy
@@ -200,6 +199,7 @@ zip -j gotowe-fotki.zip output/*
 
 ```bash
 
+
 ```
 
 ### Napotkane problemy
@@ -207,3 +207,71 @@ zip -j gotowe-fotki.zip output/*
 - 
 
 ---
+
+## Zadanie 9 - Porządki w kopiach zapasowych
+
+### Cel
+
+- uporządkowanie plików kopii w taki sposób, żeby każdy rok miał swój katalog i w każdym
+roku kopie z jednego miesiąca znajdowały się w osobnych podkatalogach.
+
+### Wykorzystane narzędzia
+
+- `unzip`, `bash`, `mkdir`, `mv`, `rm`.
+
+### Skrypt:
+
+```bash
+
+mkdir -p temp
+
+unzip -q kopie-1.zip -d temp
+unzip -q kopie-2.zip -d temp
+
+cd temp
+
+for f in *.zip; do 
+  rok=${f:0:4}; miesiac=${f:5:2}; 
+  mkdir -p "../kopie2/$rok/$miesiac"; 
+  mv "$f" "../kopie2/$rok/$miesiac/"; 
+done
+ 
+cd .. && rm -r temp
+
+```
+
+### Uwagi
+
+- Kod działa poprawnie tylko jeśli pliki ZIP mają nazwę w formacie YYYY-MM-DD.zip. Jeśli trafi się inny format (np. kopia_maj2020.zip), zostanie pominięty lub źle posortowany.
+  - możliwe rozwiązanie: dodać warunek `[[ "$f" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}\.zip$ ]]` w pętli for, aby sprawdzać format.
+ 
+---
+
+## Zadanie 10 - Galeria dla grafika
+
+### Cel
+
+- poprawić plik index.html tak, aby zdjecia w galerii byly wyświetlane prawidłowo
+
+### Wykorzystane narzędzia
+
+- `echo`, `for`.
+
+### Skrypt:
+
+```bash
+
+for img in *.png; do
+
+  echo '<div class="responsive">'
+  echo '  <div class="gallery">'
+  echo "    <a target=\"_blank\" href=\"$img\">"
+  echo "      <img src=\"$img\">"
+  echo '    </a>'
+  echo "    <div class=\"desc\">$img</div>"
+  echo '  </div>'
+  echo '</div>'
+
+done >> index.html
+
+```
